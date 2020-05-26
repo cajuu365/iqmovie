@@ -58,7 +58,8 @@ Result:
 
 Finally I couldn't develop it due to general context issues.
 
-GET /movies/search
+### GET /movies/search
+
 I built a controller called "movie shows" that allows me to query the TMDb API data with the "HTTParty" gem.
 
 Result:
