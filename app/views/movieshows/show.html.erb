@@ -1,0 +1,24 @@
+<div class="container mx-auto text-white">
+  <div class="w-full pr-2 pl-2 md:pr-56 md:pl-56 lg:pl-56 lg:pr56 pt-0 pb-2 rounded overflow-hidden shadow-lg">
+    <div class="px-6 py-4">
+      <div class="font-bold text-white text-center text-x1 mb-2">
+        <h5><%= @show["original_title"] %></h5>
+      </div>
+      <%=image_tag "#{@show["poster_path_url"]}", :class => "w-full md:w-full lg:w-full" %>
+      <p class="text-base">
+        <%= @show["overview"] %>
+      </p>
+      <p>
+        <%= @show["release_date"] %>
+      </p>
+    </div>
+    <div class="px-6 py-4">
+      <span class="inline-block bg-white text-black rounded-full px-3 py-1 text-sm font-semibold mr-2"><%= @show["vote_count"] %></span>
+    </div>
+    <div class="text-center">
+      <%= content_tag :button, class:"bg-white hover:bg-red text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4", type: :submit do %>
+        Save to my list
+      <%end%>
+    </div>
+  </div>
+</div>

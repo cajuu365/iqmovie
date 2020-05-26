@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IQmovie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body class="bg-black">
+    <%= render "partials/navigation" %>
+    <div class="container mx-auto">
+      <div class="text-white text-center w-full pr-2 pl-2 md:pr-56 md:pl-56 lg:pl-56 lg:pr56 pt-0 pb-2 rounded overflow-hidden shadow-lg">
+        <label class="bg-red-600"><%= notice %></label>
+        <label class="bg-red-600"><%= alert %></label>
+      </div>
+    </div>
+    <%= yield %>  
+  </body>
+</html>

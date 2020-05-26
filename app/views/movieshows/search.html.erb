@@ -1,0 +1,22 @@
+<h2 class="font-bold text-white text-x1 md:text-3xl leading-tight m-1">
+  Search results 👇🔎
+</h2>
+<% if @shows.nil? || @shows.empty? %>
+  <div>
+    <strong class="font-bold text-white text-x1 md:text-3xl leading-tight m-1">I found no results.</strong>
+  </div>
+<% else %>
+  <div class="grid grid-cols-3 gap-0 md:grid-cols-6 lg:grid-cols-8">
+    <% @shows.each_with_index do |show, index| %>
+        <% if show["poster_path"].nil? %>
+          <%= image_tag("error_image.png", :class => "w-28 h-full mr-1 mt-5") %>
+        <% else %>
+          <%= link_to movieshows_show_path(:movie_id => show["id"]) do %>
+            <div class="flex-initial h-full w-28 sm:40 md:40 lg:40">
+              <%= image_tag("https://image.tmdb.org/t/p/original" + show["poster_path"], class: "p-1") %>
+            </div>
+          <% end %>
+        <% end %>
+    <% end %>
+  </div>
+<%end%>

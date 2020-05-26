@@ -1,0 +1,39 @@
+<div class="bg-fixed md:overflow-hidden" style="background-image: url(assets/cover-page.jpeg)">
+  <div class="px-4 py-32 md:py-4 lg:py-10">
+    <div class="md:max-w-6xl md:mx-auto lg:px-56">
+      <div class="md:flex md:flex-wrap">
+        <div class="md:w-full text-center md:p-16 lg:px-40 lg:py-10 lg:text-center">
+          <% if user_signed_in? %>
+            <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
+              Welcome <%= current_user.email %>
+            </h1>
+          <%end%>
+          <p class="text-white md:text-xl lg:px-1">
+            Search, find and save your favorite movies
+          </p>
+          <%= form_tag(movieshows_search_path, method: "get") do %>
+            <%= text_field_tag(:query, nil, placeholder: "Search movies", class:"form-control mr-sm-2", :autocomplete => :off, id: "ip-input", class: "shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-4 text-center") %>
+            <%= submit_tag("Search in IQmovie", class: "bg-white hover:bg-red-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4") %> 
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 class="font-bold text-white text-x1 md:text-3xl leading-tight m-1">
+  The most popular movies 👉
+</h3>
+<div class="overflow-x-scroll flex h-full">
+  <% @top_shows.each_with_index do |show, index| %>
+      <% if show["poster_path"].nil? %>
+        <%= image_tag("error_image.png", :class => "p-1") %>
+      <% else %>
+        <%= link_to movieshows_show_path(:movie_id => show["id"]) do %>
+          <div class="flex-initial h-full w-40">
+            <%= image_tag("https://image.tmdb.org/t/p/original" + show["poster_path"], class: "p-1") %>
+          </div>
+        <% end %>
+      <% end %>
+  <% end %>
+</div>

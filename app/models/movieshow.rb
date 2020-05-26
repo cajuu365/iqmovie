@@ -1,0 +1,2 @@
+class Movieshow < ApplicationRecord
+end
