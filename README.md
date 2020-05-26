@@ -2,6 +2,8 @@
 
 I created a simple app that will allow me to watch TMDb movies.
 
+![IQmovie](https://repository-images.githubusercontent.com/267084106/342c4680-9f48-11ea-82ae-f7540d1b4f7a)
+
 ## Tasks
 
 Build​ ​a​ ​basic​ ​application​ ​that​ ​parses​ the movies from [The Movie Database (TMDb)](https://www.themoviedb.org/),​ ​stores​ ​results​ ​in​ ​a structured​ ​manner​ ​in​ ​a​ ​persistent​ ​layer​ ​and​ ​allows​ ​to​ ​perform​ ​search​ ​on​ ​stored​ ​results.
